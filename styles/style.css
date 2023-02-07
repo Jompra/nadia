@@ -1,0 +1,70 @@
+body {
+    background-image: url("../../images/background-pink.jpg");
+    background-size: auto;
+    text-align: center;
+}
+
+.outer-grid {
+    height: 50vh;
+    width: 730px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    margin: auto;
+    padding: 0;
+}
+
+h2 {
+    color: rgb(197, 42, 68);
+}
+
+img {
+    height: 130px;
+    width: 130px;
+    margin: auto;
+}
+
+.main-box {
+    display: flex;
+    height: 140px;
+    width: 140px;
+    margin: 2px;
+    perspective: 1000px;
+  }
+  
+  .inner-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s;
+    transform-style: preserve-3d;
+  }
+  /*
+  .main-box:active .inner-box {
+    transform: rotateY(180deg);
+  }
+  */
+  
+
+  .inner-box.flip {
+    transform: rotateY(180deg);
+  }
+
+  .front-box, .back-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .front-box {
+    background-color: white;
+  }
+  
+  .back-box {
+    background-color: white;
+    transform: rotateY(180deg);
+  }
+  
