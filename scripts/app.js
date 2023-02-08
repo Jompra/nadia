@@ -130,15 +130,17 @@ const images = [
 
 //shuffleArray takes in the images array as an input arr
 //then it uses a built-in method "sort()" to arrange them alphabetically
-//-0.5 is used to turn it into an integer 
-function shuffleArray(arr){
+//Math.random() returns a value between 0 and 1
+//so -0.5 is used to have both positive and negative values
+//now elements in the array can be rearranged to both right and left positions of the array
+const shuffleArray = arr => 
     arr.sort(() => Math.random() - 0.5);
-} 
+
 // stored the shuffled array into this variable
 const shuffledImages = shuffleArray(images);
 
 // create the cells
-function createCard(image) {
+function createCard (image) {
   const mainBox = document.createElement('div');
   mainBox.classList.add('main-box');
 
@@ -162,9 +164,15 @@ const addCardsToGrid = () => {
   });
 };
 
+let count = 0 
 function flipCard(event) {
   const clickedCard = event.currentTarget;
+  if (count < 3) {
   clickedCard.classList.add('flip');
+  if (count === 1) {
+
+  }
+  }
 };
 
 const bindClickToCards = () => {
