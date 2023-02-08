@@ -3,7 +3,7 @@ body {
     background-position: center;
     background-size:cover;
     width: fit-content;
-    height: 90vh;
+    height: 100vh;
     background-repeat: no-repeat;
     text-align: center;
 }
@@ -48,7 +48,9 @@ img {
   .flip {
     transform: rotateY(180deg);
   }
-
+.unflip {
+  transform: rotateY(0deg);
+}
 
   .front-box, .back-box {
     position: absolute;

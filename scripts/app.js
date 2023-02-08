@@ -147,6 +147,7 @@ function createCard (image) {
   const backBox = document.createElement('div');
   backBox.classList.add('back-box');
   backBox.innerHTML = `<img src=${image.image} alt=${image.name}>`;
+  mainBox.classList.add(`${image.name}`)
 
   const frontBox = document.createElement('div');
   frontBox.classList.add('front-box');
@@ -164,15 +165,50 @@ const addCardsToGrid = () => {
   });
 };
 
+let firstSelection = ''
+let secondSelection = ''
 let count = 0 
+let winCounter = 0 
+
+let temp1 = ''
+let temp2 = ''
 function flipCard(event) {
   const clickedCard = event.currentTarget;
+  count++
   if (count < 3) {
-  clickedCard.classList.add('flip');
+  clickedCard.classList.add('flip')
   if (count === 1) {
+    temp1 = clickedCard
+    firstSelection = clickedCard.classList[1]
+    console.log(firstSelection)
+    console.log(temp1)
 
+  } else if (count === 2) {
+    temp2 = clickedCard
+    secondSelection = clickedCard.classList[1]
+    console.log(secondSelection)
+
+    if (firstSelection !== secondSelection) {
+        console.log('not matched')
+        let delay = setTimeout(() => {
+            temp1.classList.remove('flip')
+            temp2.classList.remove('flip')
+            console.log(clickedCard)
+          // clickedCard.classList.remove("flip");
+          //  clickedCard.classList.remove("flip");
+        
+        
+          }, 900)
+          count =0
+      }
+      else if (firstSelection === secondSelection) {
+        console.log('matched')
+        count =0
+      }
+      console.log(count)
   }
-  }
+  
+}
 };
 
 const bindClickToCards = () => {
@@ -184,6 +220,7 @@ const resetGrid = () => {
   grid.innerHTML = '';
   addCardsToGrid();
   bindClickToCards();
+  count=0
 };
 
 resetBtn.addEventListener('click', resetGrid);
