@@ -48,9 +48,7 @@ img {
   .flip {
     transform: rotateY(180deg);
   }
-.unflip {
-  transform: rotateY(0deg);
-}
+
 
   .front-box, .back-box {
     position: absolute;
@@ -62,7 +60,11 @@ img {
   }
   
   .front-box {
-    background-color: white;
+    background-color: white; 
+    background-image: url('../../images/leaf-2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
   }
   
   .back-box {
@@ -74,7 +76,7 @@ img {
     border: 2px solid green;
     color: green;
     background-color: white;
-    font-weight: 500;
+    font-weight: 600;
     border-radius: 20px;
     height: 40px;
     width: 80px;
@@ -83,6 +85,38 @@ img {
   }
   
   .reset:hover {
+    transition-duration: 0.4s;
     background-color: green;
     color: white;
+  }
+
+  .reset:active {
+    background-color: green;
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
+  }
+
+  .shake {
+    animation: Shake 0.5s linear;
+  }
+  @keyframes Shake {
+    0% {
+        transform: translateX(2px);
+    }
+  
+    25% {
+        transform: translateX(-5px);
+    }
+  
+    50% {
+        transform: translateX(2px);
+    }
+  
+    75% {
+        transform: translateX(-5px);
+    }
+  
+    100% {
+        transform: translateX(2px);
+    }
   }

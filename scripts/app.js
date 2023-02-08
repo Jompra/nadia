@@ -118,12 +118,12 @@ const gridCellCount = width * 2;
 const images = [
   { name: 'kkslider', image: '../../images/kkslider.webp' },
   { name: 'celeste', image: '../../images/celeste.png' },
-  { name: 'timmytommy', image: '../../images/timmytommy.webp' },
+  { name: 'timmytommy', image: '../../images/timmy-tommy.png' },
   { name: 'reese', image: '../../images/reese.webp' },
   { name: 'gulliver', image: '../../images/gulliver.webp' },
   { name: 'kkslider', image: '../../images/kkslider.webp' },
   { name: 'celeste', image: '../../images/celeste.png' },
-  { name: 'timmytommy', image: '../../images/timmytommy.webp' },
+  { name: 'timmytommy', image: '../../images/timmy-tommy.png' },
   { name: 'reese', image: '../../images/reese.webp' },
   { name: 'gulliver', image: '../../images/gulliver.webp' },
 ];
@@ -134,7 +134,7 @@ const images = [
 //so -0.5 is used to have both positive and negative values
 //now elements in the array can be rearranged to both right and left positions of the array
 const shuffleArray = arr => 
-    arr.sort(() => Math.random() - 0.5);
+    arr.sort(() => Math.random() - 0.5)
 
 // stored the shuffled array into this variable
 const shuffledImages = shuffleArray(images);
@@ -191,25 +191,30 @@ function flipCard(event) {
     if (firstSelection !== secondSelection) {
         console.log('not matched')
         let delay = setTimeout(() => {
+            temp1.classList.add('shake')
+            temp2.classList.add('shake')
+            
             temp1.classList.remove('flip')
             temp2.classList.remove('flip')
+            
             console.log(clickedCard)
-          // clickedCard.classList.remove("flip");
-          //  clickedCard.classList.remove("flip");
-        
-        
           }, 900)
           count =0
       }
       else if (firstSelection === secondSelection) {
         console.log('matched')
         count =0
+        winCounter++
+        if (winCounter === width) {
+            alert('you win!')
+        }
       }
       console.log(count)
   }
-  
 }
-};
+}
+
+
 
 const bindClickToCards = () => {
   const cards = document.querySelectorAll('.main-box');
@@ -220,7 +225,8 @@ const resetGrid = () => {
   grid.innerHTML = '';
   addCardsToGrid();
   bindClickToCards();
-  count=0
+  shuffleArray(images)
+  count = 0
 };
 
 resetBtn.addEventListener('click', resetGrid);
