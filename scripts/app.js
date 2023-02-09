@@ -179,7 +179,7 @@ let seconds = 0
     let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
     timeValue.innerHTML = `<span>Timer: </span>${secondsValue}`;
   }
-  // interval = setInterval(timeGenerator, 1000);
+  interval = setInterval(timeGenerator, 1000);
 
 
 let firstSelection = ''
