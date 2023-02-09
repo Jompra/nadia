@@ -119,18 +119,18 @@ const timeValue = document.getElementById("timer")
 const width = 4;
 const gridCellCount = width * 3;
 const images = [
-  { name: 'kkslider', image: '../../images/kkslider.webp' },
-  { name: 'celeste', image: '../../images/celeste.png' },
-  { name: 'timmytommy', image: '../../images/timmy-tommy.png' },
-  { name: 'reese', image: '../../images/reese.webp' },
-  { name: 'gulliver', image: '../../images/gulliver.webp' },
-  { name: 'mabel', image: '../../images/mabel.png' },
-  { name: 'kkslider', image: '../../images/kkslider.webp' },
-  { name: 'celeste', image: '../../images/celeste.png' },
-  { name: 'timmytommy', image: '../../images/timmy-tommy.png' },
-  { name: 'reese', image: '../../images/reese.webp' },
-  { name: 'gulliver', image: '../../images/gulliver.webp' },
-  { name: 'mabel', image: '../../images/mabel.png' },
+  { name: 'kkslider', image: '../images/kkslider.webp' },
+  { name: 'celeste', image: '../images/celeste.png' },
+  { name: 'timmytommy', image: '../images/timmy-tommy.png' },
+  { name: 'reese', image: '../images/reese.webp' },
+  { name: 'gulliver', image: '../images/gulliver.webp' },
+  { name: 'mabel', image: '../images/mabel.png' },
+  { name: 'kkslider', image: '../images/kkslider.webp' },
+  { name: 'celeste', image: '../images/celeste.png' },
+  { name: 'timmytommy', image: '../images/timmy-tommy.png' },
+  { name: 'reese', image: '../images/reese.webp' },
+  { name: 'gulliver', image: '../images/gulliver.webp' },
+  { name: 'mabel', image: '../images/mabel.png' },
 ];
 
 //shuffleArray takes in the images array as an input arr
