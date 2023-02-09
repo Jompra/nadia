@@ -114,20 +114,23 @@ const grid = document.querySelector('.outer-grid');
 const resetBtn = document.querySelector('.reset');
 let interval
 const timeValue = document.getElementById("timer")
+// const result = document.querySelector('.results')
 
-const width = 5;
-const gridCellCount = width * 2;
+const width = 4;
+const gridCellCount = width * 3;
 const images = [
   { name: 'kkslider', image: '../../images/kkslider.webp' },
   { name: 'celeste', image: '../../images/celeste.png' },
   { name: 'timmytommy', image: '../../images/timmy-tommy.png' },
   { name: 'reese', image: '../../images/reese.webp' },
   { name: 'gulliver', image: '../../images/gulliver.webp' },
+  { name: 'mabel', image: '../../images/mabel.png' },
   { name: 'kkslider', image: '../../images/kkslider.webp' },
   { name: 'celeste', image: '../../images/celeste.png' },
   { name: 'timmytommy', image: '../../images/timmy-tommy.png' },
   { name: 'reese', image: '../../images/reese.webp' },
   { name: 'gulliver', image: '../../images/gulliver.webp' },
+  { name: 'mabel', image: '../../images/mabel.png' },
 ];
 
 //shuffleArray takes in the images array as an input arr
@@ -174,7 +177,7 @@ let seconds = 0
     
     if (seconds >= 30) {
       seconds = 0;
-      alert('you lost')
+      alert('you lost :(')
     }
     let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
     timeValue.innerHTML = `<span>Timer: </span>${secondsValue}`;
@@ -222,8 +225,8 @@ function flipCard(event) {
         console.log('matched')
         count =0
         winCounter++
-        if (winCounter === width) {
-            alert('you win!')
+        if (winCounter === 6) {
+            alert('you won!')
         }
       }
       console.log(count)
