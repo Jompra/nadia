@@ -112,6 +112,8 @@
 function init(){
 const grid = document.querySelector('.outer-grid');
 const resetBtn = document.querySelector('.reset');
+let interval
+const timeValue = document.getElementById("timer")
 
 const width = 5;
 const gridCellCount = width * 2;
@@ -165,6 +167,21 @@ const addCardsToGrid = () => {
   });
 };
 
+// timer
+let seconds = 0
+ function timeGenerator () {
+    seconds += 1;
+    
+    if (seconds >= 30) {
+      seconds = 0;
+      alert('you lost')
+    }
+    let secondsValue = seconds < 10 ? `0${seconds}` : seconds;
+    timeValue.innerHTML = `<span>Timer: </span>${secondsValue}`;
+  }
+  // interval = setInterval(timeGenerator, 1000);
+
+
 let firstSelection = ''
 let secondSelection = ''
 let count = 0 
@@ -193,7 +210,7 @@ function flipCard(event) {
         let delay = setTimeout(() => {
             temp1.classList.add('shake')
             temp2.classList.add('shake')
-            
+
             temp1.classList.remove('flip')
             temp2.classList.remove('flip')
             
@@ -214,8 +231,6 @@ function flipCard(event) {
 }
 }
 
-
-
 const bindClickToCards = () => {
   const cards = document.querySelectorAll('.main-box');
   cards.forEach(card => card.addEventListener('click', flipCard));
@@ -227,6 +242,7 @@ const resetGrid = () => {
   bindClickToCards();
   shuffleArray(images)
   count = 0
+  seconds = 0
 };
 
 resetBtn.addEventListener('click', resetGrid);

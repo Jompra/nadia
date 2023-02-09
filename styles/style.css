@@ -1,26 +1,54 @@
+
 body {
+  text-align: center;
     background-image: url("../../images/background-sky.jpg");
     background-position: center;
     background-size:cover;
     width: fit-content;
     height: 100vh;
     background-repeat: no-repeat;
-    text-align: center;
+   margin: auto;
+   
 }
 
 .outer-grid {
+  margin: auto;
     height: 50vh;
     width: 700px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: row;
-    margin: auto;
     padding: 0;
+}
+
+#timer {
+  background-color: rgb(0, 86, 0);
+  width: 90px;
+  height: 30px;
+  padding-top: 10px;
+  margin-top: 20px;
+margin-right: -150px;
+font-weight: 600;
+    border-radius: 10px;
+    color: white;
+    font-size: 13px;
+}
+.top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 h2 {
     color: rgb(0, 78, 0);
+    margin-top: -20px;
+    font-family: 'Arvo';
+    font-size: 25px;
+    font-weight: 800;
+    margin-top: -10px;
+    margin-bottom: 30px;
+
 }
 
 img {
@@ -31,6 +59,7 @@ img {
 }
 
   .main-box {
+    margin: auto;
     display: flex;
     height: 120px;
     width: 120px;
@@ -38,7 +67,7 @@ img {
     perspective: 1000px;
     transition: transform 0.7s;
     transform-style: preserve-3d;
-    margin: auto;
+    
     border: 2px solid green;
     border-radius: 10px;
    /* background: url('../../images/leaf.png'); */
@@ -82,6 +111,8 @@ img {
     width: 80px;
     font-size: 13px;
     box-shadow: 2px 2px 2px rgba(0, 54, 0, 0.255);
+    margin-left: -150px;
+    margin-top: 20px;
   }
   
   .reset:hover {
